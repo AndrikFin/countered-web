@@ -25,11 +25,11 @@
 
 body {
 	text-align: center;
-	background-color: rgb(40, 43, 51)
+	background-color: rgb(30, 36, 43)
 }
 
 header {
-	background-color: rgb(28, 30, 36);
+	background-color: rgb(22, 24, 31);
 }
 
 .language-logo {
@@ -86,7 +86,7 @@ img {
 img.screen {
 	display: block;
 	margin: auto;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	image-rendering: pixelated;
 	width: 720px;
 }
@@ -162,7 +162,7 @@ form input:focus {
 
 form button {
 	color: rgb(131, 140, 148);
-	background-color: rgb(28, 30, 36);
+	background-color: rgb(22, 24, 31);
 	border: 0;
 	padding: 0;
 	margin: 0;
