@@ -62,9 +62,9 @@ header {
 .menu a {
 	color: rgb(131, 140, 148);
 	text-decoration: none;
-	font-size: 28px;
+	font-size: 24px;
 	font-family: bright;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 
 .menu a:hover {
@@ -88,7 +88,7 @@ img.screen {
 	margin: auto;
 	margin-bottom: 30px;
 	image-rendering: pixelated;
-	width: 720px;
+	width: 620px;
 }
 
 img.store {
@@ -129,8 +129,8 @@ form {
 
 form p {
 	color: rgb(131, 140, 148);	
-	margin-bottom: 15px;
-	font-size: 26px;
+	margin-bottom: 10px;
+	font-size: 22px;
 	font-family: concrete;
 }
 
@@ -141,7 +141,7 @@ form input {
 	padding-left: 10px;
 	margin: 0;
 	border: 0;
-	font-size: 18px;
+	font-size: 20px;
 	font-family: concrete;
 	color: white;
 }
@@ -167,7 +167,7 @@ form button {
 	padding: 0;
 	margin: 0;
 	font-family: concrete;
-	font-size: 18px;
+	font-size: 20px;
 	height: 39px;
 	width: 25%;
 	margin-left: -3px;
@@ -180,5 +180,5 @@ footer {
 	padding-bottom: 60px;
 	color: rgb(131, 140, 148);
 	font-family: concrete;
-	font-weight: 100; 
+	/*font-weight: 100; */
 }
