@@ -130,7 +130,7 @@ form {
 form p {
 	color: rgb(131, 140, 148);	
 	margin-bottom: 10px;
-	font-size: 22px;
+	font-size: 26px;
 	font-family: concrete;
 }
 
@@ -141,7 +141,7 @@ form input {
 	padding-left: 10px;
 	margin: 0;
 	border: 0;
-	font-size: 20px;
+	font-size: 26px;
 	font-family: concrete;
 	color: white;
 }
@@ -167,10 +167,10 @@ form button {
 	padding: 0;
 	margin: 0;
 	font-family: concrete;
-	font-size: 20px;
-	height: 39px;
+	font-size: 26px;
+	height: 38px;
 	width: 25%;
-	margin-left: -3px;
+	margin-left: -4px;
 }
 
 footer {
