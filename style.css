@@ -41,14 +41,14 @@ header {
 }
 
 .language-logo {
-    position: absolute;
+	position: absolute;
 
-    height:22px;
+	height:22px;
 
-    left:50px;
-    top:50px;
+	left:50px;
+	top:50px;
 
-    display: none;
+	display: none;
 }
 
 .language-logo:after {
@@ -95,8 +95,8 @@ img.screen {
 	display: block;
 	margin: auto;
 	margin-bottom: 30px;
-	image-rendering: pixelated;
-	width: 620px;
+	image-rendering: crisp-edges;
+	width: 100%;
 }
 
 img.store {
@@ -104,7 +104,6 @@ img.store {
 	margin-top: 40px;
 	margin-left: 20px;
 	height: 60px;
-
 }
 
 div.store {
@@ -113,7 +112,6 @@ div.store {
 
 div.wrapper {
 	display: inline-block;
-	margin: center;
 }
 
 div.title {
@@ -121,7 +119,6 @@ div.title {
 }
 
 h1 {
-	font-size: 60px;
 	color: white;
 	margin-top: 60px;
 	text-align: right;
@@ -144,6 +141,8 @@ form label {
 }
 
 form input {
+	-webkit-appearance: none;
+	border-radius: 0;
 	background-color: rgb(131, 140, 148);
 	width: 50%;
 	height: 38px;
@@ -169,13 +168,13 @@ form input:focus {
 }
 
 ::-webkit-input-placeholder {
-  color: rgba(255,255,255, 0.4);
-  font-family: concrete;
+	color: rgba(255,255,255, 0.4);
+	font-family: concrete;
 }
 
 :focus::-webkit-input-placeholder {
-  color: transparent;
-  font-family: concrete;
+	color: transparent;
+	font-family: concrete;
 }
 
 footer {
@@ -186,4 +185,56 @@ footer {
 	padding-bottom: 60px;
 	color: rgb(131, 140, 148);
 	font-family: concrete;
+}
+
+@media (min-width: 640px) {
+	div.wrapper {
+		width: 620px;
+	}
+	h1 {
+		/*font-size: 50px;*/
+		font-size: 50px;
+	}
+
+	form input {
+		font-size: 26px;
+		width: 50%;
+	}
+
+	form input.submit {
+		width: 25%;
+	}
+
+	form {
+		font-size: 28px;
+	}
+}
+
+
+@media (max-width: 640px) {
+	div.wrapper {
+		width: 80%;
+	}
+
+	h1 {
+		/*font-size: 50px;*/
+		font-size: 22px;
+	}
+
+	.menu li .item, a {
+		display: none;
+	}
+
+	form input {
+		font-size: 16px;
+		width: 53%;
+	}
+
+	form input.submit {
+		width: 40%;
+	}
+
+	form {
+		font-size: 18px;
+	}
 }
