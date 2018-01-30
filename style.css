@@ -187,7 +187,7 @@ footer {
 	font-family: concrete;
 }
 
-@media (min-width: 640px) {
+@media only screen and (min-device-width: 630px) {
 	div.wrapper {
 		width: 620px;
 	}
@@ -210,15 +210,14 @@ footer {
 	}
 }
 
-
-@media (max-width: 640px) {
+@media only screen and (max-device-width: 630px) {
 	div.wrapper {
 		width: 80%;
 	}
 
 	h1 {
 		/*font-size: 50px;*/
-		font-size: 22px;
+		font-size: 50px;
 	}
 
 	.menu li .item, a {
@@ -226,7 +225,7 @@ footer {
 	}
 
 	form input {
-		font-size: 16px;
+		font-size: 26px;
 		width: 53%;
 	}
 
@@ -235,6 +234,6 @@ footer {
 	}
 
 	form {
-		font-size: 18px;
+		font-size: 28px;
 	}
 }
