@@ -1,26 +1,34 @@
 @font-face {
 	font-family: bright;
 	src: url(fonts/cmunbmr.ttf);
+	font-weight: normal;
 }
 
 @font-face {
-	font-family: bright-bold;
+	font-family: bright;
 	src: url(fonts/cmunbsr.ttf);
+	font-weight: bold;
 }
 
 @font-face {
-	font-family: concrete-bold;
+	font-family: concrete;
 	src: url(fonts/cmunobx.ttf);
+	font-weight: bold;
+	font-style: normal;
 }
 
 @font-face {
 	font-family: concrete;
 	src: url(fonts/cmunorm.ttf);
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-	font-family: concrete-it;
+	font-family: concrete;
 	src: url(fonts/cmunoti.ttf);
+	font-weight: normal;
+	font-style: italic;
 }
 
 body {
@@ -64,7 +72,7 @@ header {
 	text-decoration: none;
 	font-size: 24px;
 	font-family: bright;
-	/*font-weight: bold;*/
+	font-weight: bold;
 }
 
 .menu a:hover {
@@ -113,7 +121,7 @@ div.title {
 }
 
 h1 {
-	font-size: 55px;
+	font-size: 60px;
 	color: white;
 	margin-top: 60px;
 	text-align: right;
@@ -124,26 +132,36 @@ form {
 	margin-top: 60px;
 	margin-bottom: 60px;
 	text-align: left;
-}
-
-
-form p {
 	color: rgb(131, 140, 148);	
 	margin-bottom: 10px;
 	font-size: 26px;
 	font-family: concrete;
 }
 
+form label {
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
 form input {
 	background-color: rgb(131, 140, 148);
 	width: 50%;
-	height: 35px;
+	height: 38px;
+	padding: 0;
 	padding-left: 10px;
-	margin: 0;
 	border: 0;
 	font-size: 26px;
 	font-family: concrete;
 	color: white;
+}
+
+form input.submit {
+	background-color: rgb(22, 24, 31);
+	color: rgb(131, 140, 148);
+	padding: 0;
+	width: 25%;
+	position: relative;
+	left: -8px;
 }
 
 form input:focus {
@@ -160,25 +178,12 @@ form input:focus {
   font-family: concrete;
 }
 
-form button {
-	color: rgb(131, 140, 148);
-	background-color: rgb(22, 24, 31);
-	border: 0;
-	padding: 0;
-	margin: 0;
-	font-family: concrete;
-	font-size: 26px;
-	height: 38px;
-	width: 25%;
-	margin-left: -4px;
-}
-
 footer {
+	margin-top: 50px;
 	border-top: 3px solid rgb(131, 140, 148);
 	text-align: left;
-	padding-top: 22px;
+	padding-top: 15px;
 	padding-bottom: 60px;
 	color: rgb(131, 140, 148);
 	font-family: concrete;
-	/*font-weight: 100; */
 }
