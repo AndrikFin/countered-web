@@ -130,7 +130,7 @@ div.title {
 h1 {
 	color: white;
 	margin-top: 1em;
-	font-size: 3.5em;
+	font-size: 3em;
 	text-align: right;
 	font-family: concrete;
 }
@@ -198,9 +198,17 @@ footer {
 }
 
 
-@media only screen and (max-device-width: 620px) {
+@media only screen and (max-width: 650px), screen and (max-device-width: 650px)  {
 	div.wrapper {
 		width: 90%;
+	}
+
+	.menu li {
+		padding-left: 1vw;
+	}
+
+	h1 {
+		font-size: 6vw;
 	}
 
 	div.menu {
@@ -209,11 +217,11 @@ footer {
 	}
 
 	.menu img {
-		height: 3em;
+		height: 6vw;
 	}	
 
 	img.store {
-		height: 6em;
+		height: 10vw;
 	}
 
 
@@ -226,6 +234,6 @@ footer {
 	}
 
 	form {
-		font-size: 5em;
+		font-size: 8vw;
 	}
 }
