@@ -70,7 +70,7 @@ div.menu {
 
 .menu li {
 	display: inline-block;
-	padding-left: 1em;
+	padding-left: 1vw;
 	padding-top: 4em;
 	padding-bottom: 1em;
 }
@@ -88,7 +88,7 @@ div.menu {
 }
 
 .menu img {
-	height: 2em;
+	height: 2.1vw;
 }
 
 li.logo {
