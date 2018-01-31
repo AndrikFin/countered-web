@@ -198,7 +198,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 650px), screen and (max-device-width: 650px)  {
+@media only screen and (max-width: 640px),  screen and (max-device-width: 640px) and (orientation: portrait), screen and (max-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio : 2) {
 	div.wrapper {
 		width: 90%;
 	}
