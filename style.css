@@ -109,8 +109,9 @@ img.screen {
 
 img.store {
 	margin: auto;
-	margin-top: 2em;
-	margin-left: 2em;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
 	height: 4em;
 }
 
@@ -195,6 +196,7 @@ footer {
 	padding-bottom: 60px;
 	color: rgb(131, 140, 148);
 	font-family: concrete;
+	font-size: 1em;
 }
 
 
@@ -235,5 +237,9 @@ footer {
 
 	form {
 		font-size: 8vw;
+	}
+
+	footer {
+		font-size: 3vw;
 	}
 }
