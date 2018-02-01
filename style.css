@@ -70,10 +70,6 @@ a.humburger:hover div.line {
 	border-color: white;
 }
 
-a.logo {
-	/*padding-right: 0.5em;*/
-}
-
 div.language-logo {
 	text-align: right;
 	width: 620px;
@@ -130,10 +126,14 @@ nav.menu ul {
 	text-decoration: none;
 	font-size: 1.5em;
 	font-family: bright;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 
-.menu a:not(.games):hover {
+.menu a:hover img {
+	opacity: 0.7;
+}
+
+ul.menu li a:hover {
 	color: white;
 }
 
