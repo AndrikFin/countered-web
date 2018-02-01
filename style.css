@@ -47,6 +47,33 @@ header {
 	padding-top: 1em;
 }
 
+a.humburger {
+	width: 2em;
+	height: 0em;
+	display: none;
+	position: absolute;
+	bottom: calc(50% + 0.8em);
+	left: 2em;
+	z-index: 2;
+}
+
+div.line {
+	border-bottom: 0.2em solid rgb(131, 140, 148);
+	margin-bottom: 0.5em;
+}
+
+div.line:last-child {
+	margin-bottom: 0;
+}
+
+a.humburger:hover div.line {
+	border-color: white;
+}
+
+a.logo {
+	/*padding-right: 0.5em;*/
+}
+
 div.language-logo {
 	text-align: right;
 	width: 620px;
@@ -82,17 +109,19 @@ div.language-container:hover p {
 	display: inline;
 }
 
-div.menu {
+nav.menu {
 	width: 620px;
-	text-align: right;
 	display: inline-block;
+}
+
+nav.menu ul {
+	padding-right: 0.5em;
+	padding-left: 0.5em;
 }
 
 .menu li {
 	display: inline-block;
-	padding-left: 0.7em;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding: 1em 0.5em 1em 0.5em;
 	position: relative;
 }
 
@@ -115,7 +144,7 @@ div.menu {
 .menu .games .menu {
 	display: none;
 	position: absolute;
-	left: -1%;
+	left: -3%;
 	padding: 0em;
 }
 
@@ -244,6 +273,10 @@ footer {
 
 
 @media screen and (max-width: 640px) {
+	a.humburger {
+		display: block;
+	}
+
 	div.wrapper {
 		width: 90%;
 		top: 4em;
@@ -257,13 +290,18 @@ footer {
 		font-size: 6vw;
 	}
 
-	div.menu {
+	nav.menu {
 		text-align: right;
 		width: 90%;
 	}
 
+	a.logo {
+		display: none;
+	}
+
 	.menu img {
 		height: 6vw;
+		margin-bottom: 1em;
 	}	
 
 	img.store {
@@ -275,7 +313,7 @@ footer {
 		display: none;
 	}
 
-	a {
+	.menu ul {
 		display: none;
 	}
 
