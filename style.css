@@ -53,7 +53,7 @@ a.humburger {
 	display: none;
 	position: absolute;
 	bottom: calc(50% + 0.8em);
-	left: 2em;
+	left: 5%;
 	z-index: 2;
 }
 
