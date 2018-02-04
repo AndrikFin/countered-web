@@ -49,58 +49,25 @@ header {
 }
 
 a.humburger {
-	width: 2em;
-	height: 2em;
+	width: 6vw;
+	height: 5vw;
+	margin-bottom: 1vw;
 	display: none;
+	justify-content: space-between;
 	flex-direction: column;
 	align-self: center;
 	z-index: 2;
 }
 
-div.line {
-	border-bottom: 0.2em solid rgb(131, 140, 148);
-	margin-bottom: 0.5em;
-}
-
-div.line:last-child {
-	margin-bottom: 0;
+.humburger div.line {
+	border-top: 0.7vw solid rgb(131, 140, 148);
 }
 
 a.humburger:hover div.line {
 	border-color: white;
 }
 
-/*div.language-logo {
-	text-align: right;
-	width: 620px;
-	}*/
-
-/*div.language-logo img {
-	margin-top: 2em;
-	height: 1.2em;
-	width: 1.2em;
-}
-
-div.language-logo p {
-	color: white;
-	display: inline-block;
-	position: relative;
-	top: -0.5em;
-	font-family: bright;
-	font-size: 0.8em;
-	color: rgb(131, 140, 148);
-}
-*/
-div.language-container:hover p {
-	color: white;
-}
-
-.language-logo:after {
-	clear: both;
-}
-
 nav.menu {
-	/*margin-left: -1em;*/
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -108,276 +75,266 @@ nav.menu {
 	margin-bottom: 0.5em;
 }
 
-/*nav.menu ul {
-	padding-right: 0.5em;
-	padding-left: 0.5em;
-	}*/
+.menu li {
+	display: inline-block;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+	position: relative;
+}
 
-	.menu li {
-		display: inline-block;
-		padding-left: 0.4em;
-		padding-right: 0.4em;
-		position: relative;
-	}
+.menu li a {
+	color: rgb(131, 140, 148);
+	font-size: 1em;
+	font-family: bright;
+	font-weight: bold;
+}
 
-	.menu li:not(.logo) a {
-		color: rgb(131, 140, 148);
-		font-size: 1em;
-		font-family: bright;
-		/*font-weight: bold;*/
-	}
+.menu a:hover img {
+	opacity: 0.7;
+}
 
-	.menu a:hover img {
-		opacity: 0.7;
-	}
+.menu-main li a:hover {
+	color: white;
+}
 
-	ul.menu li a:hover {
-		color: white;
-	}
+.store img:hover {
+	opacity: 1;
+}
 
-	.store img:hover {
-		opacity: 1;
-	}
+.logo img {
+	height: 2em;
+	margin-bottom: 0.1em;
+}
 
-	.logo img {
-		height: 2em;
-		margin-bottom: 0.1em;
-	}
+.social img {
+	height: 1.7em;
+}
 
-	.social img {
-		height: 1.7em;
-	}
+.social li {
+	margin: 0em;
+	padding: 0em;
+	margin-left: 0.3em
+}
 
-	.social li {
-		margin: 0em;
-		padding: 0em;
-		margin-left: 0.3em
-	}
+.menu-main .games .menu {
+	display: none;
+	position: absolute;
+	left: -3%;
+	padding: 0em;
+}
 
-	.menu .games .menu {
-		display: none;
-		position: absolute;
-		left: -3%;
-		padding: 0em;
-	}
+.menu-main .games .countered {
+	width: 120%;
+	height: 2em;
+	padding: 0;
+	padding-top: 1em;
+	margin-top: 0.5em;
+	background-color: rgb(22, 24, 31);
+}
 
-	.menu .games .countered {
-		width: 120%;
-		height: 2em;
-		padding: 0;
-		padding-top: 1em;
-		margin-top: 0.5em;
-		background-color: rgb(22, 24, 31);
-	}
+.menu-main .games:hover .menu {
+	display: block;
+}
 
-	.menu .games:hover .menu {
-		display: block;
-	}
+img {
+	color-profile: sRGB;
+}
 
-	img {
-		color-profile: sRGB;
-	}
+.title img:hover {
+	box-shadow: 0 0.3em 0.5em 0.3em rgba(0, 0, 0, 0.4)
+}
 
-	.title img:hover {
-		 box-shadow: 0 0.3em 0.5em 0.3em rgba(0, 0, 0, 0.4)
-	}
+input[type="submit"]:hover {
+	color: white;
+}
 
-	input[type="submit"]:hover {
-		color: white;
-	}
+img.screen {
+	display: block;
+	margin: auto;
+	margin-bottom: 2em;
+	image-rendering: crisp-edges;
+	width: 100%;
+}
 
-	img.screen {
-		display: block;
-		margin: auto;
-		margin-bottom: 2em;
-		image-rendering: crisp-edges;
-		width: 100%;
-	}
+img.store {
+	margin: auto;
+	margin: 1.5em;
+	height: 3em;
+	opacity: 0.7;
+}
 
-	img.store {
-		margin: auto;
-		margin: 1.5em;
-		height: 3em;
-		opacity: 0.7;
-	}
+div.store {
+	text-align: center;
+	font-family: bright;
+	font-weight: bold;
+	color: rgb(131, 140, 148);
+}
 
-	div.store {
-		text-align: center;
-		font-family: bright;
-		font-weight: bold;
-		color: rgb(131, 140, 148);
+div.wrapper {
+	position: relative;
+	top: 5em;
+	display: inline-block;
+	width: 640px;
+}
+
+
+h1 {
+	color: white;
+	margin-top: 1em;
+	font-size: 3em;
+	text-align: right;
+	font-family: concrete;
+}
+
+form {
+	margin-top: 0.5em;
+	text-align: left;
+	color: rgb(131, 140, 148);
+	margin-bottom: 1.5em;
+	font-size: 3em;
+	font-family: concrete;
+}
+
+form label {
+	margin-bottom: 0.1em;
+	display: inline-block;
+	font-size: 0.5em;
+}
+
+form input {
+	-webkit-appearance: none;
+	border-radius: 0;
+	background-color: rgb(131, 140, 148);
+	width: 60%;
+	height: 2em;
+	padding: 0;
+	padding-left: 1em;
+	border: 0;
+	font-size: 0.5em;
+	font-family: concrete;
+	color: white;
+}
+
+form input.submit {
+	background-color: rgb(22, 24, 31);
+	color: rgb(131, 140, 148);
+	padding: 0;
+	width: 25%;
+	position: relative;
+	left: -1em;
+}
+
+form input:focus {
+	outline: none;
+}
+
+footer {
+	margin-top: 50px;
+	border-top: 3px solid rgb(131, 140, 148);
+	text-align: left;
+	padding-top: 15px;
+	padding-bottom: 60px;
+	color: rgb(131, 140, 148);
+	font-family: concrete;
+	font-size: 1em;
+}
+
+::-webkit-input-placeholder {
+	color: rgba(255,255,255, 0.4);
+	font-family: concrete;
+}
+
+:focus::-webkit-input-placeholder {
+	color: transparent;
+	font-family: concrete;
+}
+
+@media screen and (max-width: 665px) {
+	a.humburger {
+		display: flex;
 	}
 
 	div.wrapper {
-		position: relative;
-		top: 5em;
-		display: inline-block;
-		width: 640px;
+		width: 92%;
+		top: 4em;
 	}
 
+	.menu li {
+		padding-left: 1vw;
+	}
 
 	h1 {
-		color: white;
-		margin-top: 1em;
-		font-size: 3em;
+		font-size: 6vw;
+	}
+
+	nav.menu {
 		text-align: right;
-		font-family: concrete;
+		width: 92%;
+	}
+
+	a.logo {
+		display: none;
+	}
+
+	.social img {
+		height: 6vw;
+	}	
+
+	.social {
+		align-self: center;
+	}
+
+	img.store {
+		height: 8vw;
+		margin: 3vw;
+	}
+
+	img.screen {
+		margin-bottom: 4vw;
+	}
+
+	li.logo {
+		display: none;
+	}
+
+	.menu-main {
+		display: none;
+		padding-top: 6vw;
+	}
+
+	.humburger:hover + .menu-main {
+		display: block;
+		background-color: rgb(22, 24, 31);
+		height: 200%;
+		position: fixed;
+		top: 11vw;
+		left: -5%;
+	}
+
+	.menu-main .games .menu {
+		display: block;
+		position: relative;
+		padding-left: 5vw;
+	}
+
+	.menu-main li {
+		display: block;
+		text-align: left;
+		font-size: 4vw;
+		padding: 5vw;
+		padding-bottom: 2vw;
+		background-color: rgb(22, 24, 31);
+	}
+
+	.menu-main .games .menu {
+		padding-left: 8vw;
 	}
 
 	form {
-		margin-top: 0.5em;
-		text-align: left;
-		color: rgb(131, 140, 148);
-		margin-bottom: 1.5em;
-		font-size: 3em;
-		font-family: concrete;
-	}
-
-	form label {
-		margin-bottom: 0.1em;
-		display: inline-block;
-		font-size: 0.5em;
-	}
-
-	form input {
-		-webkit-appearance: none;
-		border-radius: 0;
-		background-color: rgb(131, 140, 148);
-		width: 60%;
-		height: 2em;
-		padding: 0;
-		padding-left: 1em;
-		border: 0;
-		font-size: 0.5em;
-		font-family: concrete;
-		color: white;
-	}
-
-	form input.submit {
-		background-color: rgb(22, 24, 31);
-		color: rgb(131, 140, 148);
-		padding: 0;
-		width: 25%;
-		position: relative;
-		left: -1em;
-	}
-
-	form input:focus {
-		outline: none;
-	}
-
-	::-webkit-input-placeholder {
-		color: rgba(255,255,255, 0.4);
-		font-family: concrete;
-	}
-
-	:focus::-webkit-input-placeholder {
-		color: transparent;
-		font-family: concrete;
+		font-size: 8vw;
 	}
 
 	footer {
-		margin-top: 50px;
-		border-top: 3px solid rgb(131, 140, 148);
-		text-align: left;
-		padding-top: 15px;
-		padding-bottom: 60px;
-		color: rgb(131, 140, 148);
-		font-family: concrete;
-		font-size: 1em;
+		font-size: 3vw;
 	}
-
-
-	@media screen and (max-width: 665px) {
-		a.humburger {
-			display: flex;
-		}
-
-		div.wrapper {
-			width: 92%;
-			top: 4em;
-		}
-
-		.menu li {
-			padding-left: 1vw;
-		}
-
-		h1 {
-			font-size: 6vw;
-		}
-
-		nav.menu {
-			text-align: right;
-			width: 92%;
-		}
-
-		a.logo {
-			display: none;
-		}
-
-		.menu img {
-			height: 6vw;
-			/*margin-bottom: 1em;*/
-		}	
-
-		img.store {
-			height: 8vw;
-			margin: 3vw;
-		}
-
-		img.screen {
-			margin-bottom: 4vw;
-		}
-
-		li.logo {
-			display: none;
-		}
-
-		ul.menu {
-			display: none;
-		}
-/*
-		.humburger:hover + ul.menu {
-			display: block;
-		}*/
-
-		.humburger:hover + ul.menu {
-			display: block;
-			background-color: rgb(22, 24, 31);
-			height: 100%;
-			position: fixed;
-			top: 11vw;
-			left: -5%;
-		}
-
-		.menu .games .menu {
-			display: block;
-			position: relative;
-			padding-left: 5vw;
-		}
-
-		ul.menu li {
-			display: block;
-			text-align: left;
-			font-size: 4vw;
-			padding: 5vw;
-			padding-bottom: 2vw;
-			background-color: rgb(22, 24, 31);
-		}
-
-		ul.menu li.games ul.menu {
-			padding-left: 8vw;
-		}
-
-		form {
-			font-size: 8vw;
-		}
-
-		footer {
-			font-size: 3vw;
-		}
-
-/*	div.language-container {
-		display: none;
-		}*/
-	}
+}
