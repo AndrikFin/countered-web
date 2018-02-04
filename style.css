@@ -194,6 +194,7 @@ p.description {
 p.description span {
 	font-size: 0.9em;
 	font-weight: bold;
+	font-family: bright;
 }
 
 .store.left {
@@ -253,6 +254,13 @@ p.subtitle {
 
 iframe {
 	width: 100%;
+}
+
+.logo-big {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 18em;
+	height: auto;
 }
 
 div.wrapper {
@@ -330,6 +338,7 @@ footer {
 	color: rgb(131, 140, 148);
 	font-family: concrete;
 	font-size: 1em;
+	font-family: bright;
 }
 
 ::-webkit-input-placeholder {
