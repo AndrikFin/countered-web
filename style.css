@@ -89,11 +89,11 @@ nav.menu {
 	font-weight: bold;
 }
 
-.menu a:hover img {
+.menu li a:hover img {
 	opacity: 0.7;
 }
 
-.menu-main li a:hover {
+.menu-main li a:hover:not(.games) {
 	color: white;
 }
 
@@ -150,8 +150,8 @@ input[type="submit"]:hover {
 
 img.screen {
 	display: block;
-	margin: auto;
-	margin-bottom: 2em;
+	/*margin: auto;*/
+	margin-bottom: 0.5em;
 	image-rendering: crisp-edges;
 	width: 100%;
 }
@@ -163,11 +163,92 @@ img.store {
 	opacity: 0.7;
 }
 
-div.store {
+.store {
 	text-align: center;
 	font-family: bright;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	color: rgb(131, 140, 148);
+}
+
+.store, .left img {
+	opacity: 1;
+}
+
+.left a:hover img {
+	opacity: 0.7;
+}
+
+.store p {
+	font-size: 1.5em;
+}
+
+p.description {
+	font-family: concrete;
+	text-align: left;
+	font-size: 1.3em;
+	color: rgb(131, 140, 148);
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+p.description span {
+	font-size: 0.7em;
+	font-weight: bold;
+}
+
+.store.left {
+	text-align: left;
+}
+
+p.subtitle {
+	margin-top: 1.5em;
+	margin-bottom: 0.2em;
+	border-bottom: 0.07em solid rgb(131, 140, 148);
+	text-align: left;
+	color: rgb(131, 140, 148);
+	font-family: concrete;
+	font-size: 2em;
+}
+
+.screens {
+	image-rendering: crisp-edges;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.screens div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.screens .column_small {
+	width: 38%;
+}
+
+.screens .column_big {
+	width: 59%;
+}
+
+.screens .column_small img {
+	width: 100%;
+	height: auto;
+}
+
+.screens .column_big img {
+	width: 100%;
+	height: auto;
+}
+
+.screens .column_big img:first-child {
+	margin-bottom: 1.2em;
+}
+
+.gifs img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 1em;
 }
 
 div.wrapper {
@@ -177,8 +258,16 @@ div.wrapper {
 	width: 640px;
 }
 
-
 h1 {
+	color: white;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-size: 5.3em;
+	text-align: center;
+	font-family: concrete;
+}
+
+h2 {
 	color: white;
 	margin-top: 1em;
 	font-size: 3em;
@@ -263,7 +352,7 @@ footer {
 		padding-left: 1vw;
 	}
 
-	h1 {
+	h2 {
 		font-size: 6vw;
 	}
 
