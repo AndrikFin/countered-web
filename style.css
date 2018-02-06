@@ -140,6 +140,12 @@ nav li a:hover img {
 	display: block;
 }
 
+.pixelated {
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+}
+
 img {
 	color-profile: sRGB;
 }
@@ -154,8 +160,6 @@ input[type="submit"]:hover {
 
 img.screen {
 	display: block;
-	image-rendering: crisp-edges;
-	image-rendering: pixelated;
 	width: 100%;
 }
 
@@ -221,8 +225,6 @@ p.subtitle {
 }
 
 .screens {
-	image-rendering: crisp-edges;
-	image-rendering: pixelated;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -260,8 +262,6 @@ p.subtitle {
 	width: 100%;
 	height: auto;
 	margin-bottom: 1em;
-	image-rendering: pixelated;
-
 }
 
 iframe {
