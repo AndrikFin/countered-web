@@ -52,7 +52,7 @@ header {
 	padding-top: 1.2em;
 }
 
-a.humburger {
+.hamburger {
 	width: 6vw;
 	height: 5vw;
 	margin-bottom: 1vw;
@@ -63,11 +63,11 @@ a.humburger {
 	z-index: 2;
 }
 
-.humburger div.line {
+.hamburger__line {
 	border-top: 0.7vw solid rgb(131, 140, 148);
 }
 
-a.humburger:hover div.line {
+.hamburger:hover .hamburger__line {
 	border-color: white;
 }
 
@@ -93,7 +93,7 @@ nav li a {
 	font-weight: bold;
 }
 
-nav li a:hover img {
+nav a:hover img {
 	opacity: 0.7;
 }
 
@@ -105,7 +105,7 @@ nav li a:hover img {
 	opacity: 1;
 }
 
-.logo img {
+.logo__img {
 	height: 2em;
 	margin-bottom: 0.1em;
 }
@@ -120,14 +120,14 @@ nav li a:hover img {
 	margin-left: 0.3em
 }
 
-.menu .games ul {
+.menu__games ul {
 	display: none;
 	position: absolute;
 	left: -3%;
 	padding: 0em;
 }
 
-.menu .games .countered {
+.menu__games__countered {
 	width: 120%;
 	height: 2em;
 	padding: 0;
@@ -136,7 +136,7 @@ nav li a:hover img {
 	background-color: rgb(22, 24, 31);
 }
 
-.menu .games:hover ul {
+.menu__games:hover ul {
 	display: block;
 }
 
@@ -150,7 +150,7 @@ img {
 	color-profile: sRGB;
 }
 
-img.screen:hover {
+.screenshot:hover {
 	box-shadow: 0 0.3em 0.5em 0.3em rgba(0, 0, 0, 0.4);
 }
 
@@ -158,16 +158,16 @@ input[type="submit"]:hover {
 	color: white;
 }
 
-img.screen {
+.screenshot {
 	display: block;
 	width: 100%;
 }
 
-img.screen:first-child {
+.screenshot:first-child {
 	margin-bottom: 1.5em;
 }
 
-img.store {
+.store img {
 	margin: 3em 1.5em 3em 1.5em;
 	height: 3em;
 	opacity: 0.7;
@@ -191,7 +191,7 @@ img.store {
 	font-size: 1.5em;
 }
 
-p.description {
+.description {
 	font-family: concrete;
 	text-align: left;
 	font-size: 1.3em;
@@ -200,13 +200,13 @@ p.description {
 	margin-bottom: 1.5em;
 }
 
-p.description span {
+.description span {
 	font-size: 0.9em;
 	font-weight: bold;
 	font-family: bright;
 }
 
-p.description a {
+.description a {
 	color: white;
 }
 
@@ -214,7 +214,7 @@ p.description a {
 	text-align: left;
 }
 
-p.subtitle {
+.subtitle {
 	margin-top: 1.5em;
 	margin-bottom: 0.2em;
 	border-bottom: 0.07em solid rgb(131, 140, 148);
@@ -224,37 +224,37 @@ p.subtitle {
 	font-size: 2em;
 }
 
-.screens {
+.screenshots {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.screens div {
+.screenshots__column_small, .screenshots__column_big {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
-.screens .column_small {
+.screenshots__column_small {
 	width: 38%;
 }
 
-.screens .column_big {
+.screenshots__column_big {
 	width: 59%;
 }
 
-.screens .column_small img {
+.screenshots__column_small img {
 	width: 100%;
 	height: auto;
 }
 
-.screens .column_big img {
+.screenshots__column_big img {
 	width: 100%;
 	height: auto;
 }
 
-.screens .column_big img:first-child {
+.screenshots__column_big img:first-child {
 	margin-bottom: 1.2em;
 }
 
@@ -289,7 +289,7 @@ textarea {
 	height: auto;
 }
 
-div.wrapper {
+.wrapper {
 	position: relative;
 	top: 5em;
 	display: inline-block;
@@ -340,7 +340,11 @@ form input {
 	color: white;
 }
 
-form input.submit {
+textarea {
+	-webkit-border-radius: 0;
+}	
+
+form input[type="submit"] {
 	background-color: rgb(22, 24, 31);
 	color: rgb(131, 140, 148);
 	padding: 0;
@@ -349,7 +353,7 @@ form input.submit {
 	left: -0.2em;
 }
 
-form.feedback input.submit {
+.feedback input[type="submit"] {
 	left: 0em;
 }
 
@@ -380,11 +384,11 @@ footer {
 }
 
 @media screen and (max-width: 665px) {
-	a.humburger {
+	.hamburger {
 		display: flex;
 	}
 
-	div.wrapper {
+	.wrapper {
 		width: 92%;
 		top: 4em;
 	}
@@ -405,7 +409,7 @@ footer {
 		font-size: 3.5vw;
 	}	
 
-	p.description {
+	.description {
 		font-size: 3.5vw;
 	}
 
@@ -414,7 +418,7 @@ footer {
 		width: 92%;
 	}
 
-	a.logo {
+	.logo {
 		display: none;
 	}
 
@@ -426,12 +430,12 @@ footer {
 		align-self: center;
 	}
 
-	img.store {
+	.store img {
 		height: 8vw;
 		margin: 3vw;
 	}
 
-	img.screen {
+	.screenshot {
 		margin-bottom: 4vw;
 	}
 
@@ -440,7 +444,7 @@ footer {
 		padding-top: 6vw;
 	}
 
-	.humburger:hover + .menu {
+	.hamburger:hover + .menu {
 		display: block;
 		background-color: rgb(22, 24, 31);
 		height: 200%;
@@ -449,13 +453,13 @@ footer {
 		left: -5%;
 	}
 
-	.menu .games ul {
+	.menu__games ul {
 		display: block;
 		position: relative;
 		padding-left: 5vw;
 	}
 
-	.menu li {
+	.menu li:not(.menu__games__countered) {
 		display: block;
 		text-align: left;
 		font-size: 4vw;
@@ -464,7 +468,7 @@ footer {
 		background-color: rgb(22, 24, 31);
 	}
 
-	.menu .games ul {
+	.menu__games ul {
 		padding-left: 8vw;
 	}
 
