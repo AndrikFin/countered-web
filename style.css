@@ -102,6 +102,10 @@ nav a:hover img {
 	color: white;
 }
 
+.menu>li:first-child {
+	display: none;
+}
+
 .store img:hover {
 	opacity: 1;
 }
