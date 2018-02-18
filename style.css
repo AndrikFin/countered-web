@@ -65,6 +65,7 @@ header {
 
 .hamburger__line {
 	border-top: 0.7vw solid rgb(131, 140, 148);
+	pointer-events: none;
 }
 
 .hamburger:hover .hamburger__line {
@@ -442,15 +443,15 @@ footer {
 	.menu {
 		display: none;
 		padding-top: 6vw;
-	}
-
-	.hamburger:hover + .menu {
-		display: block;
 		background-color: rgb(22, 24, 31);
 		height: 200%;
 		position: fixed;
 		top: 10vw;
 		left: -5%;
+	}
+
+	.js-show {
+		display: inline-block;
 	}
 
 	.menu__games ul {

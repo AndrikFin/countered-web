@@ -15,17 +15,19 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ff0000">
 
+	<script src="scripts.js"></script>
+
 </head>
 <body>
 	<header>
 		<nav>
 			<a class="logo" href="index.html"><img class="logo__img" src="images/logo_white.png" alt="logo"></a>
-			<a class="hamburger" href="#">
+			<a class="hamburger" onclick="showMenu()" href="#">
 				<div class="hamburger__line"></div>
 				<div class="hamburger__line"></div>
 				<div class="hamburger__line"></div>
 			</a>
-			<ul class="menu">
+			<ul id="js-menu" class="menu">
 				<li class="menu__games">
 					<a class="games" href="" onclick="return false;">GAMES</a>
 					<ul>
