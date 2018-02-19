@@ -308,6 +308,36 @@ h1 {
 	font-size: 5.3em;
 	text-align: center;
 	font-family: concrete;
+
+	animation-name: slideleft;
+	-webkit-animation-name: slideleft;
+
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+}
+
+@keyframes slideleft {
+   from {
+    margin-left: 3%;
+    opacity: 0.3;
+  }
+
+  to {
+  	margin-left: 0%;
+  	opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideleft {
+  from {
+    margin-left: 3%;
+    opacity: 0.3;
+  }
+
+  to {
+  	margin-left: 0%;
+  	opacity: 1;
+  }
 }
 
 h2 {
@@ -316,6 +346,36 @@ h2 {
 	font-size: 3em;
 	text-align: right;
 	font-family: concrete;
+
+	animation-name: slideright;
+	-webkit-animation-name: slideright;
+
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+}
+
+@keyframes slideright {
+  from {
+    margin-right: 3%;
+    opacity: 0.3;
+  }
+
+  to {
+  	margin-right: 0%;
+  	opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideright {
+  from {
+    margin-right: 3%;
+    opacity: 0.3;
+  }
+
+  to {
+  	margin-right: 0%;
+  	opacity: 1;
+  }
 }
 
 form {
