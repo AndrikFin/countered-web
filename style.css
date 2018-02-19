@@ -308,36 +308,6 @@ h1 {
 	font-size: 5.3em;
 	text-align: center;
 	font-family: concrete;
-
-	animation-name: slideleft;
-	-webkit-animation-name: slideleft;
-
-	animation-duration: 1s;
-	-webkit-animation-duration: 1s;
-}
-
-@keyframes slideleft {
-   from {
-    margin-left: 3%;
-    opacity: 0.3;
-  }
-
-  to {
-  	margin-left: 0%;
-  	opacity: 1;
-  }
-}
-
-@-webkit-keyframes slideleft {
-  from {
-    margin-left: 3%;
-    opacity: 0.3;
-  }
-
-  to {
-  	margin-left: 0%;
-  	opacity: 1;
-  }
 }
 
 h2 {
@@ -346,7 +316,9 @@ h2 {
 	font-size: 3em;
 	text-align: right;
 	font-family: concrete;
+}
 
+.slide-right {
 	animation-name: slideright;
 	-webkit-animation-name: slideright;
 
@@ -374,6 +346,37 @@ h2 {
 
   to {
   	margin-right: 0%;
+  	opacity: 1;
+  }
+}
+
+.slide-left {
+	animation-name: slideleft;
+	-webkit-animation-name: slideleft;
+
+	animation-duration: 1.5s;
+}
+
+@keyframes slideleft {
+   from {
+    margin-left: 3%;
+    opacity: 0.3;
+  }
+
+  to {
+  	margin-left: 0%;
+  	opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideleft {
+  from {
+    margin-left: 3%;
+    opacity: 0.3;
+  }
+
+  to {
+  	margin-left: 0%;
   	opacity: 1;
   }
 }
@@ -446,6 +449,11 @@ footer {
 :focus::-webkit-input-placeholder {
 	color: transparent;
 	font-family: concrete;
+}
+
+.bird {
+	float: right;
+	height: 8em;
 }
 
 @media screen and (max-width: 665px) {
