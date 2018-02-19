@@ -545,6 +545,11 @@ footer {
 		padding-left: 8vw;
 	}
 
+	.bird {
+		margin-top: 3vw;
+		height: 20vw;
+	}
+
 	form {
 		font-size: 2.5vw;
 	}
