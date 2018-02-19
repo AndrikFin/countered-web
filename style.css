@@ -52,6 +52,13 @@ header {
 	padding-top: 1.2em;
 }
 
+.city {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+}
+
 .hamburger {
 	width: 6vw;
 	height: 5vw;
