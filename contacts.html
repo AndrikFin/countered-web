@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="reset.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="styles/reset.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<title>shifted realms</title>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -16,7 +16,7 @@
 	<meta name="theme-color" content="#ff0000">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="scripts.js"></script>
+	<script src="scripts/scripts.js"></script>
 
 </head>
 <body>
@@ -29,8 +29,15 @@
 		</p>
 		<a class="email" href="mailto:andrei.ollykainen@gmail.com?Subject=shifted realms" target="_top">andrei.ollykainen@gmail.com</a>
 
-		<form action="#" method="post" class="feedback">
-			<label for="text">Or you may leave your feedback here</label><br>
+		<form onsubmit="return validate(this)" class="feedback" name="form">
+			<p class="description">Or you may leave your feedback here</p>
+			<label for="text" style="margin-top: 0.1em">Email</label><br>
+			<input type="email" style="width: 13.1em" name="email" placeholder="your email" id="email"><br>
+			<input type="radio" name="contact" value="Personal" checked="true">
+			<label for="radio">Personal</label>
+			<input type="radio" name="contact" value="Company" style="margin-left: 1em">
+			<label for="radio">Company</label><br>
+			<label for="text">Message</label><br>
 			<textarea rows="5" cols="45" name="text" id="text"></textarea><br>
 			<input type="submit" value = "Submit">
 		</form>

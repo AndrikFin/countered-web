@@ -1,0 +1,462 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/reset.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<title>Countered</title>
+	<script src="scripts/phaser.js"></script>
+	<style type="text/css">
+
+/*	@font-face {
+		font-family: 'concrete';
+		src: url('fonts/CMUConcrete-Roman.eot');
+		src: url('fonts/CMUConcrete-Roman.eot?#iefix') format('embedded-opentype'),
+		url('fonts/CMUConcrete-Roman.woff2') format('woff2'),
+		url('fonts/CMUConcrete-Roman.woff') format('woff'),
+		url('fonts/CMUConcrete-Roman.ttf') format('truetype'),
+		url('fonts/CMUConcrete-Roman.svg#CMUConcrete-Roman') format('svg');
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'concrete';
+		src: url('fonts/CMUConcrete-Bold.eot');
+		src: url('fonts/CMUConcrete-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/CMUConcrete-Bold.woff2') format('woff2'),
+		url('fonts/CMUConcrete-Bold.woff') format('woff'),
+		url('fonts/CMUConcrete-Bold.ttf') format('truetype'),
+		url('fonts/CMUConcrete-Bold.svg#CMUConcrete-Bold') format('svg');
+		font-weight: bold;
+		font-style: normal;
+	}*/
+
+	h1 {
+		font-family: concrete;
+		font-weight: bold;
+		color: white;
+		font-size: 92px;
+		left: 430px;
+		top: -162px;
+	}
+	h2 {
+		font-family: concrete;
+		font-weight: normal;
+		color: white;
+		font-size: 60px;
+		width: 600px;
+		left: 230px;
+		top: 52px;
+	}
+
+	h1, h2 {
+		position: absolute;
+		margin: 0
+	}
+
+	div {
+		position: relative;
+	}
+
+	body {
+		background-color: #252424;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	div {
+		max-width: 1280px;
+		max-width: 736px;
+	}
+	canvas {   
+		margin-top: 20px;
+ 	}
+
+ 	@media screen and (max-width: 1280px) {
+		h1 {
+			font-size: 7.2vw;
+			left: 32.5vw;
+			top: -12.4vw;
+		}
+		h2 {
+			font-size: 4.8vw;
+			width: 48vw;
+			left: 17vw;
+			top: 4.3vw;
+		}
+	}
+
+ 		</style>
+ 	</head>
+ 	<body onload='createGame()'>
+
+ 		<script type="text/javascript">
+
+ 			function createGame() {
+ 				var config = {
+ 					type: Phaser.AUTO,
+ 					width: 1280,
+ 					height: 736,
+ 					parrent: "conteiner",
+ 					physics: {
+ 						default: 'arcade',
+ 						arcade: {
+ 							gravity: { y: 600 },
+ 							debug: false
+ 						}
+ 					},
+ 					scene: {
+ 						preload: preload,
+ 						create: create,
+ 						update: update
+ 					},
+ 					crisp: true,
+ 					antialias: false,
+ 					pixelArt: true,
+ 					roundPixels: true,
+ 					alignH:      true,
+ 					alignV:      true,
+ 					backgroundColor: '#252424'
+ 				};
+
+ 				game = new Phaser.Game(config);
+ 			}
+
+ 			var score = 0;
+ 			var scoreText;
+
+ 			let game 
+ 			let scene
+
+ 			let cursors
+ 			let spaceButton
+ 			let leftButton
+ 			let rightButton
+ 			let jumpButton
+
+ 			let player
+ 			let platforms
+
+ 			let shooting = false
+
+ 			function preload () {
+ 				scene = game.scene.scenes[0]
+
+ 				this.load.image('background', 'assets/background.png');
+ 				this.load.image('foreground', 'assets/foreground.png');
+ 				this.load.image('city', 'assets/city.png');
+ 				this.load.image('ground', 'assets/ground.png');
+ 				this.load.image('jump-up', 'assets/jump-up.png');
+ 				this.load.image('jump-down', 'assets/jump-down.png');
+ 				this.load.image('box', 'assets/box.png');
+ 				this.load.image('cloud', 'assets/cloud.png');
+ 				this.load.spritesheet('char-idle', 'assets/idle.png', { frameWidth: 15, frameHeight: 41 });
+ 				this.load.spritesheet('char-walking', 'assets/walking.png', { frameWidth: 26, frameHeight: 41 });
+ 				this.load.spritesheet('char-shoot', 'assets/shoot.png', { frameWidth: 88, frameHeight: 54 });
+ 				this.load.spritesheet('platform', 'assets/platform.png', { frameWidth: 55, frameHeight: 44 });
+ 				this.load.spritesheet('baloon', 'assets/baloon.png', { frameWidth: 53, frameHeight: 106 });
+ 				this.load.spritesheet('house', 'assets/house.png', { frameWidth: 74, frameHeight: 194 });
+
+ 				cursors = this.input.keyboard.createCursorKeys()
+ 				spaceButton = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
+ 				leftButton = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A)
+ 				rightButton = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
+ 				jumpButton = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
+ 			}
+
+ 			let oneWayColliders
+ 			let box
+ 			let clouds
+
+ 			var backgroundImage
+ 			function create () {
+ 				scene.add.image(640, 368, 'background').setScale(2);
+ 				scene.add.image(640, 368, 'city').setScale(2);
+ 				scene.add.image(640, 368, 'foreground').setScale(2);
+ 				let ground = scene.add.image(640, 368, 'ground').setScale(2);
+ 				ground.depth = 98
+ 				prepareAnimations()
+
+ 				player = scene.physics.add.sprite(1000, 400, 'char-idle').setScale(2)
+ 				player.body.offset.x = 7
+ 				player.depth = 100
+
+ 				box = scene.physics.add.sprite(520, -100, 'box').setScale(2)
+ 				box.body.offset.x = 10
+ 				box.depth = 97
+
+ 				let cloud1 = scene.physics.add.sprite(1200, 200, 'cloud').setScale(2)
+ 				cloud1.body.allowGravity = false
+ 				cloud1.body.velocity.x = -30
+ 				let cloud2 = scene.physics.add.sprite(100, 300, 'cloud').setScale(2)
+ 				cloud2.body.allowGravity = false
+ 				cloud2.body.velocity.x = -10
+
+ 				clouds = [cloud1, cloud2]
+
+ 				let bottom = createStaticSprite(0, 736 - 42, 1280, 64)
+ 				scene.physics.add.collider(player, bottom)
+ 				scene.physics.add.collider(player, box)
+ 				scene.physics.add.collider(bottom, box)
+ 				scene.physics.add.collider(player, createStaticSprite(40, 0, 64, 736))
+ 				scene.physics.add.collider(player, createStaticSprite(1280 - 40, 0, 64, 736))
+ 				scene.physics.add.collider(player, createStaticSprite(0, 0, 1280, 64))
+
+ 				let platform = scene.add.sprite(200, 550, 'platform').setScale(2)
+ 				platform.anims.play('platform', true)
+
+ 				let baloon = scene.add.sprite(300, 230, 'baloon').setScale(2)
+ 				baloon.anims.play('baloon', true)
+
+ 				let house = scene.add.sprite(1060, 400, 'house').setScale(2)
+ 				house.anims.play('house', true)
+
+ 				oneWayColliders = [scene.physics.add.collider(player, createStaticSprite(200, 577, 80, 10))]
+ 				oneWayColliders.push(scene.physics.add.collider(player, createStaticSprite(310, 324, 55, 10)))
+ 				oneWayColliders.push(scene.physics.add.collider(player, createStaticSprite(1040, 550, 100, 10)))
+ 				oneWayColliders.push(scene.physics.add.collider(player, createStaticSprite(1040, 450, 100, 10)))
+ 				oneWayColliders.push(scene.physics.add.collider(player, createStaticSprite(460, 228, 670, 70)))
+ 				oneWayColliders.push(scene.physics.add.collider(player, createStaticSprite(330, 450, 540, 30)))
+ 				// scene.physics.add.overlap(player, star, intersectsWithPlatform, null, scene)	
+
+ 				// for (i in scene.children.list) {
+ 				// 	let obj = scene.children.list[parseInt(i)]
+ 				// 	obj.alpha = 0
+ 				// }
+ 				// showScene()
+
+			// this.add.sprite(352, 198, 'background')
+
+			// platforms = this.physics.add.staticGroup();
+
+			// platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+
+			// platforms.create(600, 400, 'ground');
+			// platforms.create(50, 250, 'ground');
+			// platforms.create(750, 220, 'ground');
+
+			// player = this.physics.add.sprite(100, 450, 'dude');
+
+			// player.setBounce(0.0);
+			// player.setCollideWorldBounds(true);
+			// player.setGravityY(10)
+
+			// this.physics.add.collider(player, platforms);
+
+			// stars = this.physics.add.group({
+			// 	key: 'star',
+			// 	repeat: 11,
+			// 	setXY: { x: 12, y: 0, stepX: 70 }
+			// });
+
+			// stars.children.iterate(function (child) {
+
+			// 	child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+
+			// }
+			
+
+			// this.physics.add.collider(stars, platforms)
+
+			// this.physics.add.overlap(player, stars, collectStar, null, this)
+
+			// scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' })
+
+			// bombs = this.physics.add.group();
+			// this.physics.add.collider(bombs, platforms);
+			// this.physics.add.collider(player, bombs, hitBomb, null, this);
+		}
+
+		function prepareAnimations() {
+				scene.anims.create({
+				key: 'idle',
+				frames: scene.anims.generateFrameNumbers('char-idle'),
+				frameRate: 13,
+				repeat: -1
+			});
+
+			scene.anims.create({
+				key: 'walk',
+				frames: scene.anims.generateFrameNumbers('char-walking'),
+				frameRate: 10,
+				repeat: -1
+			});
+
+			scene.anims.create({
+				key: 'shoot',
+				frames: scene.anims.generateFrameNumbers('char-shoot'),
+				frameRate: 12,
+				repeat: -1
+			});
+
+			scene.anims.create({
+				key: 'platform',
+				frames: scene.anims.generateFrameNumbers('platform'),
+				frameRate: 10,
+				repeat: -1
+			})
+
+			scene.anims.create({
+				key: 'baloon',
+				frames: scene.anims.generateFrameNumbers('baloon'),
+				frameRate: 10,
+				repeat: -1
+			})
+
+			scene.anims.create({
+				key: 'house',
+				frames: scene.anims.generateFrameNumbers('house'),
+				frameRate: 10,
+				repeat: -1
+			})
+		}
+
+		function createStaticSprite(x, y, w, h) {
+			var plat = scene.physics.add.staticSprite(x, y)
+			plat.frame.width = w
+			plat.frame.height = h
+			plat.body.width = w
+			plat.body.height = h
+			plat.setTint('#000000')
+			return plat
+		}
+
+		function lerp(a, b, n) {
+			return (1 - n) * a + n * b;
+		}	
+
+		function update () {
+
+			if (!spaceButton.isDown) {
+				shooting = false
+			}
+
+			if ((cursors.left.isDown || leftButton.isDown) && !shooting) {
+				player.body.velocity.x = lerp(player.body.velocity.x, -160, 0.15)
+				player.scaleX = -2;
+				player.anims.play('walk', true);
+			} else if ((cursors.right.isDown || rightButton.isDown) && !shooting) {
+				player.body.velocity.x = lerp(player.body.velocity.x, 160, 0.15)
+				player.scaleX = 2;
+				player.anims.play('walk', true);
+			} else if (!shooting) {
+				player.body.velocity.x = lerp(player.body.velocity.x, 0, 0.2)
+				player.anims.play('idle', true);
+			}
+
+			if (spaceButton.isDown && player.body.velocity.y == 0) {
+				shooting = true
+				player.body.velocity.x = lerp(player.body.velocity.x, 0, 0.2)
+				player.anims.play('shoot', true)
+			}
+
+			if ((cursors.up.isDown || jumpButton.isDown) && player.body.touching.down) {
+				player.setVelocityY(-430);
+			} else if (player.body.velocity.y < 0 && !player.body.touching.down && !(cursors.up.isDown || jumpButton.isDown)) {
+				player.body.velocity.y += 20
+			}
+
+			if (player.body.velocity.y < 0) {
+				player.setTexture('jump-up')
+			} else if (player.body.velocity.y > 0) {
+				player.setTexture('jump-down')
+			}
+
+			for (i in oneWayColliders) {
+				if (player.body.velocity.y < 0) {
+					oneWayColliders[parseInt(i)].active = false
+				} else {
+					oneWayColliders[parseInt(i)].active = true
+				}
+			}
+
+			if (box.body.touching.down) {
+				box.body.immovable = true
+				box.body.allowGravity = false
+				box.body.offset.y = 3
+			}
+			if (box.body.position.y > 200) {
+				box.depth = 99
+			}
+
+			for (i in clouds) {
+				let cloud = clouds[parseInt(i)]
+				if (cloud.body.position.x < -600) {
+				cloud.body.position.x = 1280 + 300
+				cloud.body.position.y = 100 + 300 * Math.random()
+				cloud.body.reset(cloud.body.position.x, cloud.body.position.y)
+				cloud.body.velocity.x = -10 - 30 * Math.random()
+			}
+			} 
+
+			
+		}
+
+		function showScene() {
+			scene.add.tween({
+				targets: scene.children.list,
+				ease: 'Sine.easeInOut',
+				duration: 2000,
+				delay: 0,
+ 					// x: {
+ 					// 	getStart: () => startX,
+ 					// 	getEnd: () => endX,
+ 					// },
+ 					// y: {
+ 					// 	getStart: () => startY,
+ 					// 	getEnd: () => endY,
+ 					// },
+ 					alpha: {
+ 						getStart: () => 0,
+ 						getEnd: () => 1
+ 					},
+ 					onComplete: () => {
+    //handle completion
+}
+});
+		}
+
+		function intersectsWithPlatform() {
+
+		}
+
+		function collectStar (player, star) {
+			star.disableBody(true, true);
+
+			score += 10;
+			scoreText.setText('Score: ' + score);
+
+			if (stars.countActive(true) === 0) {
+				stars.children.iterate(function (child) {
+					child.enableBody(true, child.x, 0, true, true);
+				});
+
+				var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+
+				var bomb = bombs.create(x, 16, 'bomb');
+				bomb.setBounce(1);
+				bomb.setCollideWorldBounds(true);
+				bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+				bomb.allowGravity = false;
+			}
+		}
+
+		function hitBomb (player, bomb) {
+			this.physics.pause();
+			player.setTint(0xff0000);
+			player.anims.play('turn');
+			gameOver = true;
+		}
+
+	</script>
+
+	<div id="conteiner">
+		<h1>COUNTERED</h1>
+		<h2>preorder or play now</h2>		
+	</div>
+
+</body>
+</html>
