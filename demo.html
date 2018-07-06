@@ -99,38 +99,6 @@
 			transition: all 0.5s ease;
 		}
 
-		div.button {
-			border: 2px solid rgba(255, 255, 255, 0.5);
-			-webkit-transform: rotate(45deg);
-			-moz-transform: rotate(45deg);
-			-o-transform: rotate(45deg);
-			-ms-transform: rotate(45deg);
-			transform: rotate(45deg);
-			position: absolute;
-			width: 7vw;
-			height: 7vw;
-			max-width: 100px;
-			max-width: 100px;
-			bottom: 4vw;
-			display: none;
-		}
-
-		div.button.left {
-			left: 4vw;
-		}
-
-		div.button.right {
-			left: 17vw;
-		}
-
-		div.button.jump {
-			right: 17vw;
-		}
-
-		div.button.shoot {
-			right: 4vw;
-		}
-
 		@media screen and (max-width: 1280px) {
 			h1 {
 				font-size: 7.2vw;
@@ -201,11 +169,6 @@
 		let platforms
 
 		let shooting = false
-
-		let leftPressed = false
-		let rightPressed = false
-		let jumpPressed = false
-		let shootPressed = false
 
 		function preload() {
 			scene = game.scene.scenes[0]
@@ -322,14 +285,6 @@
 		}
 
 		function loadScene() {
-
-			if (mobileAndTabletcheck()) {
-				let buttons = document.getElementsByClassName('button')
-				for (i in buttons) {
-					let hiddenButton = buttons.item(parseInt(i))
-					hiddenButton.style.display = 'block'
-				}
-			}
 
 			let button = document.getElementsByClassName('animated-button')[0]
 			button.style.border = "none"
@@ -658,11 +613,6 @@
 			<h1>COUNTERED</h1>
 			<h2>preorder or <a href="#" class="animated-button" onclick="loadScene(); return false">play now</a></h2>		
 		</div>
-
-		<div class="button left" onmouseover="(function() { leftPressed = true })()" onmouseout="(function() { leftPressed = false })()"></div>
-		<div class="button right" onmouseover="(function() { rightPressed = true })()" onmouseout="(function() { rightPressed = false })()"></div>
-		<div class="button jump" onmouseover="(function() { jumpPressed = true })()" onmouseout="(function() { jumpPressed = false })()"></div>
-		<div class="button shoot" onmouseover="(function() { shootPressed = true })()" onmouseout="(function() { shootPressed = false })()"></div>
 
 	</body>
 	</html>
