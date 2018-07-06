@@ -323,7 +323,7 @@
 
 		function loadScene() {
 
-			if (!mobileAndTabletcheck()) {
+			if (mobileAndTabletcheck()) {
 				let buttons = document.getElementsByClassName('button')
 				for (i in buttons) {
 					let hiddenButton = buttons.item(parseInt(i))
