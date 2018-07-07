@@ -504,11 +504,11 @@
 					plat.alpha = 0
 				})
 
-				if ((cursors.left.isDown || leftButton.isDown || leftPressed) && !shooting) {
+				if ((cursors.left.isDown || leftButton.isDown) && !shooting) {
 					player.body.velocity.x = lerp(player.body.velocity.x, -160, 0.15)
 					player.scaleX = -2;
 					player.anims.play('walk', true);
-				} else if ((cursors.right.isDown || rightButton.isDown || rightPressed) && !shooting) {
+				} else if ((cursors.right.isDown || rightButton.isDown) && !shooting) {
 					player.body.velocity.x = lerp(player.body.velocity.x, 160, 0.15)
 					player.scaleX = 2;
 					player.anims.play('walk', true);
@@ -517,7 +517,7 @@
 					player.anims.play('idle', true);
 				}
 
-				if ((spaceButton.isDown || shootPressed) && player.body.velocity.y == 0) {
+				if ((spaceButton.isDown) && player.body.velocity.y == 0) {
 					shooting = true
 					player.body.velocity.x = lerp(player.body.velocity.x, 0, 0.2)
 					player.anims.play('shoot', true)
@@ -529,9 +529,9 @@
 					}
 				}
 
-				if ((cursors.up.isDown || jumpButton.isDown || jumpPressed) && player.body.touching.down) {
+				if ((cursors.up.isDown || jumpButton.isDown) && player.body.touching.down) {
 					player.setVelocityY(-430);
-				} else if (player.body.velocity.y < 0 && !player.body.touching.down && !(cursors.up.isDown || jumpButton.isDown || !jumpPressed)) {
+				} else if (player.body.velocity.y < 0 && !player.body.touching.down && !(cursors.up.isDown || jumpButton.isDown)) {
 					player.body.velocity.y += 20
 				}
 
