@@ -8,10 +8,7 @@ $(function() {
 //ДИНАМИЧЕСКОЕ СОЗДАНИЕ НАВИГАЦИОННОГО МЕНЮ
 let links = [{ref: "index.html", title: "SHIFTED REALMS"},
 			{ref: "", title: "GAMES"},
-			{ref: "company.html", title: "COMPANY"},
-			{ref: "support.html", title: "SUPPORT"},
-			{ref: "contacts.html", title: "CONTACTS"},
-			{ref: "demo.html", title: "TRY"}]
+			{ref: "support.html", title: "SUPPORT"}]
 
 let socials = [{ref: "#", src: "images/social_twitter_logo.png", alt: "twitter logo"},
 			  {ref: "#", src: "images/social_facebook_logo.png", alt: "facebook logo"},
@@ -160,7 +157,7 @@ function checkLength(item, comment) {
 	if (item.value.length == 0) {
 		markIncorrect(item, comment)
 		return false
-	} 
+	}
 	return true
 }
 
@@ -178,5 +175,5 @@ function markIncorrect(item, comment) {
 
 function isEmail(email){
 	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return re.test(String(email).toLowerCase());	
+	return re.test(String(email).toLowerCase());
 }
